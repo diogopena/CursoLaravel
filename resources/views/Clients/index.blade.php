@@ -3,27 +3,34 @@
 @push('css')
 @endpush
 @section('conteudo')
-<form>
-    <div class="form-group">
-        <label>Nome: </label>
-        <input type="text" class="form-control">
-    </div>
-    <div class="form-group">
-        <label >CPF: </label>
-        <div class="form-control">
-        <input type="text" class="cpf-mask">
-        </div>
-    </div>
-    <div class="form-group">
-        <label >Endereço: </label>
-        <input type="text" class="form-control">
-    </div>
-    
-    <button type="submit" class="btn btn-primary">Gravar!</button>
-</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">#id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach($clients as $client)
+        <tr>
+            <th scope="row">{{$client->id}}</th>
+            <td>{{$client->name}}</td>
+            <td>{{$client->cpf}}</td>
+            <td>{{$client->email}}</td>
+            <td>
+            <a class="btn btn-primary btm-sm active" href="" role="button" aria-pressed="true">Editar</a>
+            <a class="btn btn-danger btm-sm active" href="" role="button" aria-pressed="true">Apagar</a>
+            </td>
+        </tr>
+    @endforeach
+  </tbody>
+</table>
+
+<a class="btn btn-primary" href="" role="button">Inserir Cliente</a>
 @endsection
 @push('scripts')    
-<script>
-    $(".cpf-mask").mask('000.000.000-00')
-</script>
 @endpush
