@@ -146,6 +146,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'cpf' => 'CPF',
+        'name' => 'Nome'
+    ],
 
 ];

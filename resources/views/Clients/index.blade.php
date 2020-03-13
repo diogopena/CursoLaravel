@@ -2,6 +2,11 @@
 
 @push('css')
 @endpush
+
+@if(Session::has('success'))
+    toastr["sucess"]("<b>Sucesso: </b> {{ Session::get('sucess') }}");
+@endif
+
 @section('conteudo')
 
 <table class="table table-striped">
@@ -30,7 +35,7 @@
   </tbody>
 </table>
 
-<a class="btn btn-primary" href="" role="button">Inserir Cliente</a>
+<a class="btn btn-primary" href="{{route('client.create')}}" role="button">Inserir Cliente</a>
 @endsection
 @push('scripts')    
 @endpush
