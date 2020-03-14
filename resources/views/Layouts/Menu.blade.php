@@ -57,6 +57,13 @@
                     </a>
                 </li>
             </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('book.index')}}">
+                        <i class="nav-icon fas fa-book text-gray"></i> Livros
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>

@@ -14,28 +14,21 @@
         <tr>
         <th scope="col">#id</th>
         <th scope="col">Nome</th>
-        <th scope="col">CPF</th>
-        <th scope="col">E-mail</th>
-        <th scope="col">Endereço</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Numero de Páginas</th>
         <th scope="col">Ações</th>
         </tr>
     </thead>
     <tbody>
-    @foreach($clients as $client)
+    @foreach($books as $book)
         <tr>
-            <th scope="row">{{$client->id}}</th>
-            <td>{{$client->name}}</td>
-            <td>{{$client->cpf}}</td>
-            <td>{{$client->email}}</td>
-            <td>{{$client->endereco}}</td>
+            <th scope="row">{{$book->id}}</th>
+            <td>{{$book->name}}</td>
+            <td>{{$book->writer}}</td>
+            <td>{{$book->page_number}}</td>
             <td>
-            <a class="btn btn-warning btm-lg text-white" href="{{ route('client.edit',[ $client->id ]) }}" role="button" aria-pressed="true">
-                <i class="fal fa-pencil"></i>
-                <span class='d-none d-md-inline'>Editar</span>
-            </a>
-
-
-            <span data-url="{{ route('client.destroy',[ $client->id ]) }}" data-idClient='{{ $client->id }}' class="btn btn-danger btm-lg text-white deleteButton" aria-pressed="true">
+           
+            <span data-url="{{ route('book.destroy',[ $book->id ]) }}" data-idClient='{{ $book->id }}' class="btn btn-danger btm-lg text-white deleteButton" aria-pressed="true">
                 <i class="fal fa-trash"></i>
                 <span class='d-none d-md-inline'>Deletar</span>
             </span>
@@ -46,7 +39,7 @@
   </tbody>
 </table>
 
-<a class="btn btn-primary" href="{{route('client.create')}}" role="button">Inserir Cliente</a>
+<a class="btn btn-primary" href="{{route('book.create')}}" role="button">Inserir Livro</a>
 
 @endsection
 @push('scripts')
